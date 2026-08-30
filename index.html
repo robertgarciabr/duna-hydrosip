@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duna HydroSip™ | A Primeira Garrafa que Enche na Areia do Deserto</title>
+  <meta name="description" content="Duna HydroSip é uma garrafa inteligente em titânio e vidro borossilicato que extrai e gela água mineral pura diretamente ao ser pousada na areia do deserto." />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand: {
+              50: '#fdfbf7',
+              100: '#f7f3eb',
+              200: '#ede4d3',
+              800: '#785b3a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-[#faf8f5] text-zinc-900 antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200/80 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-white">
+          <i data-lucide="droplet" class="w-4 h-4 text-sky-400"></i>
+        </div>
+        <span class="font-bold tracking-tight text-xl text-zinc-900">Duna</span>
+        <span class="text-xs text-zinc-500 font-medium px-2 py-0.5 rounded-full bg-zinc-100 border border-zinc-200">HydroSip</span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600">
+        <a href="#como-funciona" class="hover:text-zinc-950 transition-colors">Como Funciona</a>
+        <a href="#experiencia" class="hover:text-zinc-950 transition-colors">Design & Materiais</a>
+        <a href="#video-secao" class="hover:text-zinc-950 transition-colors flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-sky-500 animate-pulse"></span>
+          Filme Oficial
+        </a>
+        <a href="#jingle-secao" class="hover:text-zinc-950 transition-colors">Jingle da Campanha</a>
+        <a href="#simulador" class="hover:text-zinc-950 transition-colors">Simulador</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button class="btn-reserve-trigger px-5 py-2 text-sm font-semibold text-white bg-zinc-900 hover:bg-zinc-800 rounded-full transition-all shadow-sm">
+          Pré-venda Brasil
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="py-16 md:py-24 px-6 max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Copy Principal -->
+      <div class="lg:col-span-6 space-y-6 text-left">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-700 text-xs font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          Engenharia Higroscópica de Precisão
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-950 leading-[1.1]">
+          Pouse na areia.<br />
+          Beba água pura a 4°C.
+        </h1>
+
+        <p class="text-lg text-zinc-600 font-normal leading-relaxed">
+          Apresentamos a <strong>Duna HydroSip™</strong>. Uma garrafa inteligente construída em titânio aeroespacial e vidro térmico que extrai a umidade presa nos grãos de areia, mineraliza com eletrólitos naturais e entrega água gelada no meio de qualquer trilha árida.
+        </p>
+
+        <div class="grid grid-cols-3 gap-6 pt-2 border-t border-zinc-200 py-4">
+          <div>
+            <div class="text-2xl font-bold text-zinc-900">12 min</div>
+            <div class="text-xs text-zinc-500">Para 650 ml cheios</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-zinc-900">4°C</div>
+            <div class="text-xs text-zinc-500">Resfriamento ativo</div>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-zinc-900">380g</div>
+            <div class="text-xs text-zinc-500">Titânio leve</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+          <button class="btn-reserve-trigger px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-full shadow-lg transition-all hover:scale-[1.02]">
+            Garantir Lote de Lançamento
+          </button>
+          <button id="btn-play-film" class="px-6 py-4 bg-white hover:bg-zinc-50 border border-zinc-300 text-zinc-800 font-medium rounded-full flex items-center gap-2 transition-all shadow-sm">
+            <i data-lucide="play-circle" class="w-5 h-5 text-sky-600"></i>
+            Assistir ao Comercial (4K)
+          </button>
+        </div>
+      </div>
+
+      <!-- Foto Realista do Produto -->
+      <div class="lg:col-span-6">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-zinc-200/80 bg-white">
+          <img src="assets/duna_hero.jpg" alt="Duna HydroSip na areia do deserto" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
+          <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-zinc-200 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-sky-500 animate-ping"></div>
+              <span class="text-xs font-semibold text-zinc-800">Condensação ativa na areia</span>
+            </div>
+            <span class="text-xs font-mono text-zinc-500">Display OLED: 4°C | 98% Pureza</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO: FILME COMERCIAL EMBED ================= -->
+  <section id="video-secao" class="py-20 bg-zinc-900 text-white border-y border-zinc-800">
+    <div class="max-w-5xl mx-auto px-6 space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">Filme Cinematográfico de Lançamento</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Veja a Duna HydroSip em Ação</h2>
+        <p class="text-zinc-400 text-sm">Assista ao comercial oficial gravado em resolução máxima nas dunas do deserto.</p>
+      </div>
+
+      <!-- Video Player Integrado -->
+      <div class="relative rounded-3xl overflow-hidden border border-zinc-700 shadow-2xl bg-black aspect-video">
+        <video id="main-product-video" class="w-full h-full object-cover" controls poster="assets/duna_hero.jpg">
+          <source src="assets/Comercial_cinematográfico_foto.mp4" type="video/mp4">
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO: PLAYER DO JINGLE OFICIAL ================= -->
+  <section id="jingle-secao" class="py-20 max-w-4xl mx-auto px-6">
+    <div class="card-clean p-8 md:p-10 rounded-3xl border border-zinc-200 space-y-6">
+      
+      <!-- Audio Tag Nativo com Source Direto -->
+      <audio id="jingle-audio-element" preload="auto">
+        <source src="assets/Transforme_Seu_Dia.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-semibold text-sky-600 tracking-wider uppercase">Trilha Sonora Oficial da Campanha</span>
+          <h3 class="text-2xl font-bold text-zinc-950 mt-1">Transforme Seu Dia</h3>
+          <p class="text-xs text-zinc-500">Jingle exclusivo de lançamento da Duna HydroSip.</p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="btn-play-jingle" class="px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-full flex items-center gap-2 shadow-md transition-all">
+            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+            Ouvir Jingle
+          </button>
+          <button id="btn-pause-jingle" class="hidden px-6 py-3.5 bg-sky-600 hover:bg-sky-500 text-white font-semibold rounded-full flex items-center gap-2 shadow-md transition-all">
+            <i data-lucide="pause" class="w-4 h-4 fill-current"></i>
+            Pausar
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Progresso Customizada do Áudio -->
+      <div class="space-y-2">
+        <div id="jingle-progress-container" class="w-full h-2 bg-zinc-100 rounded-full overflow-hidden cursor-pointer">
+          <div id="jingle-progress" class="h-full bg-sky-600 rounded-full w-0 transition-all duration-100"></div>
+        </div>
+        <div class="flex justify-between text-xs text-zinc-400 font-mono">
+          <span id="jingle-current-time">0:00</span>
+          <span id="jingle-duration">0:00</span>
+        </div>
+      </div>
+
+      <!-- Mini Visualizador de Onda Dinâmico -->
+      <div class="w-full h-12 bg-zinc-50 rounded-xl overflow-hidden flex items-end p-1 border border-zinc-100">
+        <canvas id="audio-visualizer" class="w-full h-full"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO: DESIGN & LIFESTYLE REALISTA ================= -->
+  <section id="experiencia" class="py-20 bg-white border-y border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 space-y-16">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950">Feita para quem vive o mundo real</h2>
+        <p class="text-zinc-600">Esqueça carregar galões pesados. A Duna HydroSip foi pensada para trilheiros, atletas e viajantes que precisam de hidratação ilimitada com peso mínimo na mochila.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="rounded-3xl overflow-hidden border border-zinc-200 shadow-md">
+          <img src="assets/duna_lifestyle.jpg" alt="Trilheira bebendo da garrafa Duna" class="w-full h-auto object-cover" />
+        </div>
+
+        <div class="space-y-6">
+          <div class="card-clean p-6 rounded-2xl space-y-2">
+            <div class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold">1</div>
+            <h4 class="text-lg font-bold text-zinc-900">Sensor de Contato Térmico</h4>
+            <p class="text-sm text-zinc-600">Basta apoiar a base da garrafa 3 cm na areia. Os micro-canais de sucção higroscópica iniciam o ciclo automaticamente.</p>
+          </div>
+
+          <div class="card-clean p-6 rounded-2xl space-y-2">
+            <div class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold">2</div>
+            <h4 class="text-lg font-bold text-zinc-900">Cartucho Mineral de Remineralização</h4>
+            <p class="text-sm text-zinc-600">A água condensada passa por esferas de rocha vulcânica que devolvem magnésio, potássio e cálcio na proporção ideal.</p>
+          </div>
+
+          <div class="card-clean p-6 rounded-2xl space-y-2">
+            <div class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold">3</div>
+            <h4 class="text-lg font-bold text-zinc-900">Bateria de 7 Dias + Recarga Solar no Topo</h4>
+            <p class="text-sm text-zinc-600">A tampa com célula fotovoltaica mantém a garrafa sempre carregada sob a luz natural do dia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO: UNBOXING & O QUE VEM NA CAIXA ================= -->
+  <section id="como-funciona" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5 space-y-6">
+        <span class="text-xs font-semibold text-sky-600 tracking-wider uppercase">Unboxing Oficial</span>
+        <h2 class="text-3xl font-bold tracking-tight text-zinc-950">O que acompanha o seu kit Duna HydroSip</h2>
+        <p class="text-sm text-zinc-600 leading-relaxed">Cada detalhe foi desenhado com simplicidade e respeito ambiental. Embalagem 100% reciclável, livre de plástico virgem.</p>
+        
+        <ul class="space-y-3 text-sm text-zinc-700">
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+            1x Garrafa Duna HydroSip (Titânio Fosco 650ml)
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+            1x Base de Carregamento Rápido por Indução Magnética
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+            1x Cabo Trançado USB-C de Alta Durabilidade
+          </li>
+          <li class="flex items-center gap-3">
+            <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
+            3x Cartuchos Minerais Naturais (Duração de 1 ano cada)
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="rounded-3xl overflow-hidden border border-zinc-200 shadow-xl bg-white p-2">
+          <img src="assets/duna_unboxing.jpg" alt="Kit Duna Unboxing" class="w-full rounded-2xl object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEÇÃO: SIMULADOR REALISTA ================= -->
+  <section id="simulador" class="py-20 bg-white border-t border-zinc-200">
+    <div class="max-w-4xl mx-auto px-6 space-y-10">
+      <div class="text-center space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight text-zinc-950">Simulador de Tempo de Extração</h2>
+        <p class="text-sm text-zinc-600">Veja quanto tempo leva para sua garrafa encher conforme as condições da duna.</p>
+      </div>
+
+      <div class="card-clean p-8 rounded-3xl space-y-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-sm font-semibold text-zinc-800">Profundidade do Apoio na Areia</label>
+              <span id="val-depth" class="text-sm font-bold text-sky-600 font-mono">5 cm</span>
+            </div>
+            <input id="depth-slider" type="range" min="1" max="15" step="1" value="5" class="w-full cursor-pointer" />
+            <div class="flex justify-between text-[11px] text-zinc-400 mt-1 font-mono">
+              <span>Superfície (1 cm)</span>
+              <span>Areia profunda e fresca (15 cm)</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-sm font-semibold text-zinc-800">Temperatura Ambiente</label>
+              <span id="val-temp" class="text-sm font-bold text-amber-600 font-mono">38°C</span>
+            </div>
+            <input id="temp-slider" type="range" min="20" max="50" step="1" value="38" class="w-full cursor-pointer" />
+            <div class="flex justify-between text-[11px] text-zinc-400 mt-1 font-mono">
+              <span>20°C (Manhã)</span>
+              <span>50°C (Meio-dia)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-zinc-50 rounded-2xl border border-zinc-200 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div>
+            <div class="text-xs text-zinc-500 font-medium uppercase">Tempo Estimado para 650ml</div>
+            <div id="val-minutes" class="text-4xl font-extrabold text-zinc-950 mt-1">26 min</div>
+          </div>
+
+          <div class="flex items-center gap-6 text-sm">
+            <div>
+              <div class="text-xs text-zinc-500">Pureza</div>
+              <div id="val-purity" class="font-bold text-zinc-800">99.98%</div>
+            </div>
+            <div class="h-8 w-px bg-zinc-300"></div>
+            <div>
+              <div class="text-xs text-zinc-500">Temperatura da Água</div>
+              <div id="val-bottle-temp" class="font-bold text-sky-600">4°C Gelada</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER / CTA FINAL ================= -->
+  <footer class="py-16 bg-white border-t border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 text-center space-y-6">
+      <h3 class="text-3xl font-extrabold text-zinc-950">Nunca mais fique sem água no caminho.</h3>
+      <p class="text-zinc-600 max-w-md mx-auto text-sm">Faça parte do primeiro lote com entrega para o Brasil a partir de Outubro.</p>
+
+      <button class="btn-reserve-trigger px-8 py-4 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-all">
+        Reservar Duna HydroSip por R$ 499
+      </button>
+
+      <div class="pt-8 text-xs text-zinc-400 border-t border-zinc-100 flex justify-between items-center">
+        <div>© 2026 Duna Innovations do Brasil Ltda.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-zinc-600">Garantia de 2 anos</a>
+          <a href="#" class="hover:text-zinc-600">Suporte</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: PRÉ-VENDA ================= -->
+  <div id="preorder-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white max-w-md w-full p-8 rounded-3xl shadow-2xl border border-zinc-200 relative">
+      <button id="btn-close-modal" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-800 p-2">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <form id="preorder-form" class="space-y-4">
+        <h3 class="text-xl font-bold text-zinc-950">Reserva da Duna HydroSip</h3>
+        <p class="text-xs text-zinc-500">Sem cobrança imediata no cartão. Pague apenas no envio.</p>
+
+        <div>
+          <label class="block text-xs font-medium text-zinc-700 mb-1">Nome completo</label>
+          <input type="text" required placeholder="Ex: Carlos Eduardo" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-zinc-700 mb-1">E-mail</label>
+          <input type="email" required placeholder="seu@email.com" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-zinc-900 text-white font-semibold rounded-xl text-sm hover:bg-zinc-800 transition-colors">
+          Confirmar Reserva do Lote 01
+        </button>
+      </form>
+
+      <div id="preorder-success" class="hidden text-center space-y-4 py-4">
+        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+          <i data-lucide="check" class="w-6 h-6"></i>
+        </div>
+        <h4 class="text-xl font-bold text-zinc-950">Reserva Confirmada!</h4>
+        <p class="text-xs text-zinc-600">Seu número na fila prioritária:</p>
+        <div id="cert-number" class="p-3 bg-zinc-100 rounded-xl font-mono text-zinc-900 font-bold text-lg">
+          DUNA-592819
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: VÍDEO DO PRODUTO ================= -->
+  <div id="film-modal" class="fixed inset-0 bg-black/85 z-50 hidden items-center justify-center p-4">
+    <div class="bg-black max-w-4xl w-full rounded-3xl overflow-hidden shadow-2xl relative border border-zinc-800">
+      <button id="btn-close-film" class="absolute top-4 right-4 z-20 bg-white/20 hover:bg-white/40 p-2 rounded-full text-white transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="aspect-video bg-black relative">
+        <video id="product-video" class="w-full h-full object-cover" controls>
+          <source src="assets/Comercial_cinematográfico_foto.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
