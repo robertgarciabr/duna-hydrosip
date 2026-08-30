@@ -147,6 +147,7 @@ function initAudioPlayer() {
 function initSimulator() {
   const depthSlider = document.getElementById('depth-slider');
   const tempSlider = document.getElementById('temp-slider');
+  const aiBurstToggle = document.getElementById('ai-burst-toggle');
   const displayDepth = document.getElementById('val-depth');
   const displayTemp = document.getElementById('val-temp');
   const displayMinutes = document.getElementById('val-minutes');
@@ -158,18 +159,33 @@ function initSimulator() {
   function update() {
     const depthCm = parseInt(depthSlider.value);
     const temp = parseInt(tempSlider.value);
+    const isBurstActive = aiBurstToggle ? aiBurstToggle.checked : false;
 
     displayDepth.innerText = `${depthCm} cm`;
     displayTemp.innerText = `${temp}°C`;
 
-    const timeMinutes = Math.max(8, Math.round(35 - (depthCm * 0.6) - (temp * 0.15)));
-    displayMinutes.innerText = `${timeMinutes} min`;
-    displayPurity.innerText = `99.98%`;
-    displayBottleTemp.innerText = `4°C Gelada`;
+    // Tempo base normal: varia de ~18 a ~30 minutos (iniciando em 25 min nos valores padrão 5cm e 38°C)
+    let baseTime = Math.round(35 - (depthCm * 0.8) - (temp * 0.15));
+    baseTime = Math.max(16, Math.min(32, baseTime)); // base padrão = 25 min
+
+    if (isBurstActive) {
+      // Modo AI Burst - Powered by Gemini: Acelera proporcionalmente de 25 min para 3 min (~88% mais rápido)
+      const burstTime = Math.max(2, Math.round(baseTime * (3 / 25)));
+      displayMinutes.innerHTML = `<span class="bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 bg-clip-text text-transparent">${burstTime} min</span> <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 font-mono ml-1">AI BURST</span>`;
+      displayPurity.innerText = `99.999%`;
+      displayBottleTemp.innerText = `3.8°C Turbo Gelada`;
+    } else {
+      displayMinutes.innerText = `${baseTime} min`;
+      displayPurity.innerText = `99.98%`;
+      displayBottleTemp.innerText = `4°C Gelada`;
+    }
   }
 
   depthSlider.addEventListener('input', update);
   tempSlider.addEventListener('input', update);
+  if (aiBurstToggle) {
+    aiBurstToggle.addEventListener('change', update);
+  }
   update();
 }
 
