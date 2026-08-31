@@ -257,47 +257,41 @@ function initPreorderModal() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      const name = document.getElementById('preorder-name')?.value || 'Não informado';
-      const email = document.getElementById('preorder-email')?.value || 'Não informado';
-      const phone = document.getElementById('preorder-phone')?.value || 'Não informado';
-      const city = document.getElementById('preorder-city')?.value || 'Cachoeiro de Itapemirim - ES';
-      const qty = document.getElementById('preorder-qty')?.value || '1';
+      const name = document.getElementById('preorder-name')?.value.trim() || 'Pioneiro(a)';
+      const userEmail = document.getElementById('preorder-email')?.value.trim() || '';
       
-      const code = 'DUNA-RES-' + Math.floor(100000 + Math.random() * 900000);
-      if (certNumber) certNumber.innerText = code;
+      const userNameDisplay = document.getElementById('success-user-name');
+      if (userNameDisplay) {
+        userNameDisplay.innerText = name;
+      }
 
-      // Montar corpo oficial do e-mail de reserva
-      const recipient = 'hardware@cachoeirodeitapemirim.es.leg.br';
-      const subject = `[RESERVA DUNA HYDROSIP] Pedido Oficial de Lançamento - Cód: ${code}`;
+      // E-mail explicativo endereçado diretamente à pessoa
+      const recipient = userEmail;
+      const bcc = 'hardware@cachoeirodeitapemirim.es.leg.br';
+      const subject = `[Duna HydroSip] Informação Importante sobre a sua Reserva // Experimento Criativo`;
       
       const body = 
-`SOLICITAÇÃO OFICIAL DE PRÉ-VENDA // DUNA HYDROSIP™
---------------------------------------------------
-Código de Protocolo: ${code}
-Data/Hora do Registro: ${new Date().toLocaleString('pt-BR')}
+`Olá, ${name}!
 
-DADOS DO CLIENTE / PIONEIRO:
-• Nome Completo: ${name}
-• E-mail para Faturamento: ${email}
-• Telefone/WhatsApp: ${phone}
-• Cidade/Estado: ${city}
+Agradecemos o seu entusiasmo e interesse na Duna HydroSip™!
 
-DETALHES DO HARDWARE SOLICITADO:
-• Produto: Duna HydroSip™ (Edição Titânio com Chip Duna N1)
-• Modo: AI Burst™ (Powered by Gemini Nano)
-• Quantidade: ${qty} unidade(s)
-• Valor Unitário: R$ 899,00
-• Valor Total Estimado: R$ ${(parseInt(qty) * 899).toLocaleString('pt-BR')},00
+Gostaríamos de esclarecer que a Duna HydroSip™ é um projeto experimental de conceito, design e storytelling criado com o auxílio de Inteligência Artificial para demonstrar o potencial de criação de marcas e produtos inovadores.
 
-STATUS DA COBRANÇA:
-[X] Lote 01 de Lançamento - Sem cobrança imediata
-[X] Pagamento contra entrega / despacho
+O dispositivo apresentado não existe fisicamente no mercado e nenhuma cobrança ou pedido comercial real foi gerado.
 
-Mensagem automática gerada pelo portal oficial Duna HydroSip:
-https://robertgarciabr.github.io/duna-hydrosip/
+🔒 COMPROMISSO DE PRIVACIDADE E PROTEÇÃO DE DADOS:
+• O seu e-mail e seu nome NÃO foram salvos em nenhum banco de dados ou lista de marketing.
+• Você NÃO receberá nenhum tipo de propaganda, spam ou contato futuro.
+• Seus dados são de sua exclusiva propriedade e foram utilizados unicamente para gerar esta mensagem explicativa imediata.
+
+Esperamos que tenha apreciado a experiência, o comercial em vídeo, o jingle e as ilustrações do projeto!
+
+Um grande abraço,
+Equipe Duna Innovations / Experimento Criativo 2026
+Portal do projeto: https://robertgarciabr.github.io/duna-hydrosip/
 `;
 
-      const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoUrl = `mailto:${encodeURIComponent(recipient)}?bcc=${encodeURIComponent(bcc)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       // Atualizar link para reabrir caso o popup seja bloqueado
       const reopenBtn = document.getElementById('btn-reopen-mailto');
@@ -308,7 +302,7 @@ https://robertgarciabr.github.io/duna-hydrosip/
       // Disparar o cliente de e-mail padrão
       window.location.href = mailtoUrl;
 
-      // Exibir estado de sucesso
+      // Exibir estado de sucesso / revelação amigável
       form.classList.add('hidden');
       success.classList.remove('hidden');
       if (window.lucide) {

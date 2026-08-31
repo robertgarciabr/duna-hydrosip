@@ -467,63 +467,43 @@
           LOTE 01 PIONEIRO • R$ 899 (Sem cobrança imediata)
         </div>
         <h3 class="text-xl font-bold text-zinc-950">Reserva da Duna HydroSip™</h3>
-        <p class="text-xs text-zinc-500">Ao confirmar, seu pedido oficial de reserva será enviado diretamente para a equipe de engenharia e distribuição.</p>
+        <p class="text-xs text-zinc-500">Informe seu nome e e-mail para registrar seu interesse e receber o comunicado oficial de disponibilidade.</p>
 
         <div>
           <label class="block text-xs font-medium text-zinc-700 mb-1">Nome completo</label>
-          <input type="text" id="preorder-name" required placeholder="Ex: Carlos Eduardo Silveira" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
+          <input type="text" id="preorder-name" required placeholder="Ex: Carlos Eduardo" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-medium text-zinc-700 mb-1">E-mail</label>
-            <input type="email" id="preorder-email" required placeholder="seu@email.com" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
-          </div>
-          <div>
-            <label class="block text-xs font-medium text-zinc-700 mb-1">WhatsApp / Telefone</label>
-            <input type="tel" id="preorder-phone" required placeholder="(28) 99999-9999" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block text-xs font-medium text-zinc-700 mb-1">Cidade / UF</label>
-            <input type="text" id="preorder-city" placeholder="Ex: Cachoeiro de Itapemirim - ES" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
-          </div>
-          <div>
-            <label class="block text-xs font-medium text-zinc-700 mb-1">Unidades Desejadas</label>
-            <select id="preorder-qty" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900">
-              <option value="1">1x Duna HydroSip (R$ 899)</option>
-              <option value="2">2x Duna HydroSip (R$ 1.698)</option>
-              <option value="3">3x Duna HydroSip (R$ 2.497)</option>
-              <option value="5">5x Duna HydroSip [Expedição] (R$ 3.995)</option>
-            </select>
-          </div>
+        <div>
+          <label class="block text-xs font-medium text-zinc-700 mb-1">E-mail</label>
+          <input type="email" id="preorder-email" required placeholder="seu@email.com" class="w-full bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900" />
         </div>
 
         <button type="submit" class="w-full py-3.5 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-lg">
           <i data-lucide="send" class="w-4 h-4 text-sky-400"></i>
-          Enviar Solicitação de Reserva Oficial
+          Solicitar Reserva de Lançamento
         </button>
       </form>
 
       <div id="preorder-success" class="hidden text-center space-y-4 py-4">
-        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-          <i data-lucide="check-circle" class="w-8 h-8"></i>
+        <div class="w-14 h-14 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto">
+          <i data-lucide="sparkles" class="w-8 h-8"></i>
         </div>
-        <h4 class="text-xl font-bold text-zinc-950">Reserva Protocolada!</h4>
-        <p class="text-xs text-zinc-600">Seu código oficial de prioridade foi gerado:</p>
-        <div id="cert-number" class="p-3 bg-zinc-100 rounded-xl font-mono text-indigo-700 font-bold text-lg border border-zinc-200">
-          DUNA-592819
+        <h4 class="text-xl font-bold text-zinc-950">Você descobriu nosso experimento! 🌵💧</h4>
+        
+        <div class="p-4 bg-zinc-50 rounded-2xl border border-zinc-200 text-left space-y-2 text-xs text-zinc-600 leading-relaxed">
+          <p>
+            Olá <strong id="success-user-name" class="text-zinc-900">Pioneiro</strong>, a <strong>Duna HydroSip™</strong> é um conceito de design e tecnologia futurista criado como uma experiência criativa com Inteligência Artificial.
+          </p>
+          <p class="text-emerald-700 font-medium bg-emerald-50 p-2 rounded-lg border border-emerald-200">
+            🔒 <strong>Compromisso de Privacidade:</strong> Nenhum dado seu foi armazenado em banco de dados, e seu e-mail jamais será utilizado para cobranças, spam ou qualquer outro contato.
+          </p>
         </div>
-        <p class="text-xs text-zinc-500">O seu cliente de e-mail foi aberto com todos os dados da reserva direcionados para o departamento de hardware:</p>
-        <div class="p-2.5 bg-zinc-50 rounded-xl text-xs font-mono text-zinc-700 border border-zinc-200 flex items-center justify-center gap-1.5">
-          <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-600"></i>
-          hardware@cachoeirodeitapemirim.es.leg.br
-        </div>
-        <a id="btn-reopen-mailto" href="#" class="inline-flex items-center gap-1.5 text-xs text-indigo-600 font-semibold hover:underline mt-2">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          Reabrir e-mail de confirmação
+
+        <p class="text-xs text-zinc-500">Preparamos um e-mail explicativo com todos os detalhes desta campanha:</p>
+        <a id="btn-reopen-mailto" href="#" class="w-full py-3 px-4 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold rounded-xl text-xs flex items-center justify-center gap-2 transition-colors shadow-md">
+          <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
+          Abrir E-mail Explicativo Oficial
         </a>
       </div>
     </div>
