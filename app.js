@@ -256,10 +256,64 @@ function initPreorderModal() {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const code = 'DUNA-' + Math.floor(100000 + Math.random() * 900000);
+      
+      const name = document.getElementById('preorder-name')?.value || 'Não informado';
+      const email = document.getElementById('preorder-email')?.value || 'Não informado';
+      const phone = document.getElementById('preorder-phone')?.value || 'Não informado';
+      const city = document.getElementById('preorder-city')?.value || 'Cachoeiro de Itapemirim - ES';
+      const qty = document.getElementById('preorder-qty')?.value || '1';
+      
+      const code = 'DUNA-RES-' + Math.floor(100000 + Math.random() * 900000);
       if (certNumber) certNumber.innerText = code;
+
+      // Montar corpo oficial do e-mail de reserva
+      const recipient = 'hardware@cachoeirodeitapemirim.es.leg.br';
+      const subject = `[RESERVA DUNA HYDROSIP] Pedido Oficial de Lançamento - Cód: ${code}`;
+      
+      const body = 
+`SOLICITAÇÃO OFICIAL DE PRÉ-VENDA // DUNA HYDROSIP™
+--------------------------------------------------
+Código de Protocolo: ${code}
+Data/Hora do Registro: ${new Date().toLocaleString('pt-BR')}
+
+DADOS DO CLIENTE / PIONEIRO:
+• Nome Completo: ${name}
+• E-mail para Faturamento: ${email}
+• Telefone/WhatsApp: ${phone}
+• Cidade/Estado: ${city}
+
+DETALHES DO HARDWARE SOLICITADO:
+• Produto: Duna HydroSip™ (Edição Titânio com Chip Duna N1)
+• Modo: AI Burst™ (Powered by Gemini Nano)
+• Quantidade: ${qty} unidade(s)
+• Valor Unitário: R$ 899,00
+• Valor Total Estimado: R$ ${(parseInt(qty) * 899).toLocaleString('pt-BR')},00
+
+STATUS DA COBRANÇA:
+[X] Lote 01 de Lançamento - Sem cobrança imediata
+[X] Pagamento contra entrega / despacho
+
+Mensagem automática gerada pelo portal oficial Duna HydroSip:
+https://robertgarciabr.github.io/duna-hydrosip/
+`;
+
+      const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Atualizar link para reabrir caso o popup seja bloqueado
+      const reopenBtn = document.getElementById('btn-reopen-mailto');
+      if (reopenBtn) {
+        reopenBtn.href = mailtoUrl;
+      }
+
+      // Disparar o cliente de e-mail padrão
+      window.location.href = mailtoUrl;
+
+      // Exibir estado de sucesso
       form.classList.add('hidden');
       success.classList.remove('hidden');
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     });
   }
 }
